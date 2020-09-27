@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+package MyGrpcService;
+
+service SchoolService{
+  rpc getAllStudent(Empty) returns(StudentListResponse){}
+}
+
+message Empty{
+}
+
+message StudentResponse{
+  int32 Id=1;
+  string Name=2;
+  string Email=3;
+}
+
+message StudentListResponse{
+  repeated StudentResponse ListData=1;
+}
